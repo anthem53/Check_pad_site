@@ -24,6 +24,7 @@ def create_content(oldContent : str,newContent : str):
     result.append(wordStarLine +" 새로 업데이트된 공지사항"+wordStarLine)
     for np in newPosts:
         result.append("%d %s %s" %(np[0],np[1],np[2].strftime("%Y-%m-%d")))
+    result.append(starLine)
     result.append("\n\n")
     result.append(wordStarLine +" New Data"+wordStarLine)
     result.append(newContent)

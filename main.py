@@ -75,11 +75,12 @@ def job():
 def test():
     print("스케쥴 테스트")
 
-    
-    
-schedule.every(1).hour.do(job)
 
-while True:
+def execute():    
+    schedule.every(30).minutes.do(job)
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
-    schedule.run_pending()
-    time.sleep(1)
+if __name__ == "__main__":
+    job()
