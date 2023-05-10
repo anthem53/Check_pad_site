@@ -49,7 +49,7 @@ def job():
 
     try:
         isUpdated = False
-        with open("result.txt","r", encoding="uft-8") as file:
+        with open("result.txt","r", encoding="utf-8") as file:
             a = "".join(file.readlines())
             if a == result:
                 print("There is no update. pass.")
