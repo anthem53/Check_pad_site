@@ -43,7 +43,8 @@ def parse_fileContent(fileContent : str):
     fileContentStr = fileContent.split('\n')
     for s in fileContentStr:
         s = s.strip()
-        result.append(parseLine(s))
+        if s != "":
+            result.append(parseLine(s))
 
     return result
 
