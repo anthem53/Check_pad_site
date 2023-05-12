@@ -45,31 +45,34 @@ def job():
         post_list.append(" ".join(temp))
 
     result = "\n".join(post_list)
-
-
-    try:
-        isUpdated = False
-        with open("result.txt","r", encoding="utf-8") as file:
-            a = "".join(file.readlines())
-            if a == result:
-                print("There is no update. pass.")
-                
-            else :
-                print("Call update issue to target")
-                isUpdated = True
-                send_email(a,result)
-        if isUpdated == True:
-            os.remove("result.txt")
-            with open("result.txt","w",encoding="utf-8") as file:
-                file.write(result)
-                print("Update Complete.")
-                
-                
-                ## call function
-    except FileNotFoundError:
-        print("First, if there is no file.")
-        with open("result.txt","w", encoding='utf-8') as file:
-            a = file.write(result)
+    result.strip()
+    if result == "":
+        return
+    else:
+        try:
+            isUpdated = False
+            with open("result.txt","r", encoding="utf-8") as file:
+                a = "".join(file.readlines())
+                if a == result:
+                    print("> There is no update. pass.")
+                    
+                else :
+                    print("> Call update issue to target")
+                    isUpdated = True
+                    send_email(a,result)
+            if isUpdated == True:
+                os.remove("result.txt")
+                with open("result.txt","w",encoding="utf-8") as file:
+                    file.write(result)
+                    print("> Update Complete.")
+                    
+                    
+                    ## call function
+        except FileNotFoundError:
+            print("> First, if there is no file.")
+            with open("result.txt","w", encoding='utf-8') as file:
+                a = file.write(result)
+                print("> Complete to create new File")
 
 
 def test():
