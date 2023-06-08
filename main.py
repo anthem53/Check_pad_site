@@ -24,6 +24,7 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--incognito")
 chrome_options.add_argument("--headless")  # Background(CLI) 동작 사용
 chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument('--disable-dev-shm-usage')
 chrome_options.add_argument('--disable-setuid-sendbox')
 chrome_options.add_experimental_option('excludeSwitches',['enable-logging'])

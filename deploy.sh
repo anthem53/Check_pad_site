@@ -8,4 +8,4 @@ echo "> Program Start"
 rm nohup.out
 nohup python -u main.py &
 
-echo "> Program quit
+echo "> Program quit"
